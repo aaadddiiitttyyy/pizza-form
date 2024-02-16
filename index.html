@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order Form</title>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Pizza Order Form</h1>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Pizza Order Form -->
+        <form action="confirm_order.php" method="post">
+
+            <!-- Personal Information Section -->
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="1234567890" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </fieldset>
+
+            <!-- Pizza Details Section -->
+            <fieldset>
+                <legend>Pizza Details</legend>
+                <label for="num_pizzas">Number of Pizzas:</label>
+                <input type="number" id="num_pizzas" name="num_pizzas" min="1" required>
+
+                <label for="size">Size:</label>
+                <select id="size" name="size" required>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+
+                <label>Shape:</label>
+                <label for="round">Round</label>
+                <input type="radio" id="round" name="shape" value="round" checked>
+                <label for="square">Square</label>
+                <input type="radio" id="square" name="shape" value="square">
+            </fieldset>
+
+            <!-- Crust Type Section -->
+            <fieldset>
+                <legend>Crust Type</legend>
+                <label for="deep_dish">Deep Dish</label>
+                <input type="radio" id="deep_dish" name="crust" value="deep_dish" checked>
+                <label for="thin_crust">Thin Crust</label>
+                <input type="radio" id="thin_crust" name="crust" value="thin_crust">
+            </fieldset>
+
+            <!-- Toppings Section -->
+            <fieldset>
+                <legend>Toppings</legend>
+                <label for="toppings">Select Toppings:</label>
+                <select id="toppings" name="toppings[]" multiple>
+                    <option value="pepperoni">Pepperoni</option>
+                    <option value="mushrooms">Mushrooms</option>
+                    <option value="olives">Olives</option>
+                    <!-- Add more toppings as needed -->
+                </select>
+            </fieldset>
+
+            <!-- Order Type Section -->
+            <fieldset>
+                <legend>Order Type</legend>
+                <label for="takeout">Takeout</label>
+                <input type="radio" id="takeout" name="order_type" value="takeout" checked>
+                <label for="delivery">Delivery</label>
+                <input type="radio" id="delivery" name="order_type" value="delivery">
+                <label for="eat_in">Eat-In</label>
+                <input type="radio" id="eat_in" name="order_type" value="eat_in">
+            </fieldset>
+
+            <!-- Additional Comments Section -->
+            <fieldset>
+                <legend>Additional Comments</legend>
+                <label for="comments">Comments:</label>
+                <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+            </fieldset>
+
+            <!-- Advanced Elements Section -->
+            <fieldset>
+                <legend>Advanced Elements</legend>
+                <label for="delivery_date">Delivery Date:</label>
+                <input type="date" id="delivery_date" name="delivery_date">
+
+                <label for="color_preference">Color Preference:</label>
+                <input type="color" id="color_preference" name="color_preference">
+
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" step="1">
+
+                <label for="progress">Order Progress:</label>
+                <progress id="progress" value="50" max="100"></progress>
+
+                <label for="range">Spiciness Level:</label>
+                <input type="range" id="range" name="spiciness" min="1" max="10">
+            </fieldset>
+
+            <!-- Submit and Reset Buttons -->
+            <div>
+                <input type="submit" value="Place Order">
+                <input type="reset" value="Reset Form">
+            </div>
+
+        </form>
+
+        <!-- Image Section -->
+        <p>
+            <img src="pizza.jpg" alt="Delicious Pizza">
+        </p>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Pizza House</p>
+    </footer>
+
+</body>
+</html>
